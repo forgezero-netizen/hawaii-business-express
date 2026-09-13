@@ -1,6 +1,12 @@
 (() => {
   const DCCA_SEARCH_URL = 'https://hbe.dcca.hawaii.gov/search-and-buy';
 
+  // Use the corrected production logo uploaded directly to the site.
+  // The previous logo.svg artwork was cropped at the right edge of “EXPRESS”.
+  document.querySelectorAll('img[src="assets/logo.svg"]').forEach((image) => {
+    image.src = 'assets/logo-correct.jpg?v=20260913-1';
+  });
+
   document.querySelectorAll('[data-dcca-search]').forEach((form) => {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
