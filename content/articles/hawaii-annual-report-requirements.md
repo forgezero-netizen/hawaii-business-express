@@ -17,7 +17,8 @@ published: 2026-09-13
 updated: 2026-09-13
 featured: false
 draft: false
-image: ""
+image: "/assets/articles/hawaii-annual-report-requirements/hero.png"
+image_alt: "Illustration of Hawaiʻi annual report filing requirements, deadlines, and compliance essentials"
 author: "Hawaiʻi Business Express"
 ---
 
