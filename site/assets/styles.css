@@ -46,7 +46,14 @@ button, input, textarea { font: inherit; }
 .site-header { background: var(--navy); color: #fff; position: sticky; top: 0; z-index: 50; box-shadow: 0 4px 18px rgba(0,0,0,.14); }
 .header-inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
 .brand { display: flex; align-items: center; text-decoration: none; color: #fff; flex-shrink: 0; }
-.brand img { width: 330px; max-height: 58px; }
+.brand img {
+  display: block;
+  height: 58px;
+  width: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+}
 .site-nav { display: flex; align-items: center; gap: 7px; }
 .site-nav a {
   color: rgba(255,255,255,.88);
@@ -154,7 +161,7 @@ h3 { font-size: 1.22rem; }
 .site-footer a { color: #dbe4e6; text-decoration: none; }
 .site-footer a:hover { color: #fff; text-decoration: underline; }
 .footer-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 7px; }
-.footer-brand img { width: 300px; margin-bottom: 12px; }
+.footer-brand img { width: 300px; height: auto; margin-bottom: 12px; object-fit: contain; }
 .footer-small { border-top: 1px solid rgba(255,255,255,.12); margin-top: 32px; padding-top: 18px; font-size: .82rem; color: #aebdc1; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 
 .prose { max-width: 850px; }
@@ -169,11 +176,8 @@ h3 { font-size: 1.22rem; }
 .mt-3 { margin-top: 28px; }
 .mb-0 { margin-bottom: 0; }
 
-/* Force the approved proposal lockup across every page. Using a new filename prevents stale browser/CDN caches. */
-.brand img, .footer-brand img { content: url('logo-proposal.svg'); object-fit: contain; }
-
 @media (max-width: 980px) {
-  .brand img { width: 270px; }
+  .brand img { height: 52px; width: auto; max-width: none; }
   .nav-toggle { display: inline-flex; }
   .site-nav { display: none; position: absolute; left: 20px; right: 20px; top: 72px; background: var(--navy); border: 1px solid rgba(255,255,255,.14); border-radius: 14px; padding: 10px; flex-direction: column; align-items: stretch; box-shadow: 0 14px 28px rgba(0,0,0,.2); }
   .site-nav.is-open { display: flex; }
@@ -186,7 +190,7 @@ h3 { font-size: 1.22rem; }
 
 @media (max-width: 700px) {
   .container { width: min(calc(100% - 28px), var(--max)); }
-  .brand img { width: 230px; }
+  .brand img { height: 46px; width: auto; max-width: none; }
   .header-inner { min-height: 70px; }
   h1 { font-size: 2.65rem; }
   .hero-grid { padding-top: 46px; }
