@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 430" role="img" aria-labelledby="title desc">
+  <title id="title">Stylized Hawaiʻi business landscape</title>
+  <desc id="desc">Abstract mountain ridge, Honolulu-style buildings, sun, and ocean waves in the Hawaiʻi Business Express brand palette.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#effafa"/>
+      <stop offset="1" stop-color="#cfecef"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" x2="1">
+      <stop offset="0" stop-color="#147f86"/>
+      <stop offset="1" stop-color="#2c8fa3"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="430" rx="28" fill="url(#sky)"/>
+  <circle cx="565" cy="92" r="46" fill="#d8a23d" opacity=".85"/>
+  <path d="M35 263C108 242 150 214 202 184c36-21 59-25 92-16 33 10 46 35 81 30 42-6 77-52 118-56 47-5 73 45 121 64 20 8 37 12 51 13v86H35z" fill="#c4dedc"/>
+  <path d="M28 277c76-27 124-58 178-90 33-19 61-25 93-13 34 13 45 37 78 34 46-5 75-60 118-58 42 2 72 47 119 64 17 7 34 11 54 13" fill="none" stroke="#557b7c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity=".65"/>
+  <g fill="#ffffff" stroke="#9fc8cc" stroke-width="2">
+    <rect x="95" y="231" width="42" height="77" rx="3"/>
+    <rect x="143" y="213" width="34" height="95" rx="3"/>
+    <rect x="184" y="242" width="51" height="66" rx="3"/>
+    <rect x="244" y="221" width="38" height="87" rx="3"/>
+    <rect x="291" y="247" width="58" height="61" rx="3"/>
+    <rect x="360" y="226" width="39" height="82" rx="3"/>
+    <rect x="410" y="239" width="55" height="69" rx="3"/>
+  </g>
+  <g fill="#2c8fa3" opacity=".55">
+    <rect x="104" y="243" width="7" height="7"/><rect x="120" y="243" width="7" height="7"/><rect x="104" y="258" width="7" height="7"/><rect x="120" y="258" width="7" height="7"/>
+    <rect x="151" y="226" width="7" height="7"/><rect x="165" y="226" width="7" height="7"/><rect x="151" y="242" width="7" height="7"/><rect x="165" y="242" width="7" height="7"/>
+    <rect x="253" y="234" width="7" height="7"/><rect x="268" y="234" width="7" height="7"/><rect x="253" y="250" width="7" height="7"/><rect x="268" y="250" width="7" height="7"/>
+  </g>
+  <path d="M0 300h700v130H0z" fill="url(#sea)"/>
+  <path d="M0 329c88-31 143-23 213 2 73 26 132 30 210-1 82-33 150-34 277 10" fill="none" stroke="#9de1e1" stroke-width="12" opacity=".65"/>
+  <path d="M0 370c85-25 145-16 210 5 75 24 141 23 218-4 83-30 155-26 272 11" fill="none" stroke="#e1f4f4" stroke-width="7" opacity=".8"/>
+  <g transform="translate(535 248)">
+    <rect x="0" y="0" width="114" height="48" rx="14" fill="#253238" opacity=".92"/>
+    <circle cx="31" cy="24" r="11" fill="none" stroke="#6bd2d4" stroke-width="5"/>
+    <path d="M39 32l10 10" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M24 24h13" stroke="#6bd2d4" stroke-width="4" stroke-linecap="round"/>
+    <text x="58" y="30" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700">SEARCH</text>
+  </g>
+</svg>
