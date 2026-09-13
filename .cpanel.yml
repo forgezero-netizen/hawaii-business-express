@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/vrbaandc/public_html/hawaiibusinessexpress.com/
+    - /bin/cp -R site/. "$DEPLOYPATH"
