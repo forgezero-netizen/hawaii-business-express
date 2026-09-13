@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Hawaiʻi Annual Report Requirements</title>
+  <desc id="desc">A branded illustration showing Diamond Head, the ocean, an annual report checklist, and quarterly filing deadlines.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dff2f5"/><stop offset="1" stop-color="#79cce4"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2aa7c4"/><stop offset="1" stop-color="#0b7b87"/></linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#223741"/><stop offset="1" stop-color="#0e2a3a"/></linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset="1" stop-color="#eef6f7"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0e2a3a" flood-opacity=".22"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <path d="M0 460 C210 420 330 430 495 390 C625 360 715 305 820 285 C945 262 1060 318 1185 330 C1310 342 1440 315 1600 280 L1600 640 L0 640Z" fill="#4d7c72" opacity=".9"/>
+  <path d="M430 404 C545 385 626 336 705 300 C785 264 858 240 954 276 C1025 302 1084 345 1178 359 C1260 371 1358 350 1450 322 C1344 377 1268 405 1168 414 C1054 425 957 389 856 376 C724 360 608 405 430 404Z" fill="#365a57"/>
+  <path d="M0 565 C235 515 458 545 650 526 C858 505 1010 461 1194 470 C1367 478 1490 532 1600 520 L1600 900 L0 900Z" fill="url(#sea)"/>
+  <path d="M0 650 C256 611 455 680 700 635 C955 588 1170 612 1600 558" fill="none" stroke="#b6eef0" stroke-width="24" opacity=".6"/>
+  <path d="M0 720 C310 680 512 745 790 700 C1088 651 1282 694 1600 646" fill="none" stroke="#ffffff" stroke-width="12" opacity=".48"/>
+  <g opacity=".55" fill="#ffffff"><circle cx="1280" cy="150" r="45"/><circle cx="1330" cy="135" r="30"/><circle cx="1385" cy="152" r="36"/></g>
+
+  <rect x="70" y="70" width="685" height="420" rx="28" fill="url(#panel)" filter="url(#shadow)"/>
+  <text x="120" y="135" fill="#d8a23d" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">MANAGING A BUSINESS</text>
+  <rect x="120" y="165" width="88" height="5" rx="2" fill="#d8a23d"/>
+  <text x="120" y="245" fill="#ffffff" font-family="Arial, sans-serif" font-size="72" font-weight="800">Hawaiʻi Annual Report</text>
+  <text x="120" y="325" fill="#8bd8dd" font-family="Arial, sans-serif" font-size="72" font-weight="800">Requirements</text>
+  <text x="120" y="385" fill="#dce8eb" font-family="Arial, sans-serif" font-size="28">Quarter-based deadlines • filing basics • good standing</text>
+  <text x="120" y="440" fill="#ffffff" font-family="Arial, sans-serif" font-size="21" letter-spacing="3">STAY CURRENT. STAY COMPLIANT.</text>
+
+  <g transform="translate(855 110)" filter="url(#shadow)">
+    <rect x="0" y="0" width="600" height="265" rx="24" fill="url(#paper)"/>
+    <rect x="0" y="0" width="600" height="64" rx="24" fill="#223741"/>
+    <rect x="0" y="42" width="600" height="22" fill="#223741"/>
+    <text x="34" y="42" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="2">QUARTER-END DUE DATES</text>
+    <g font-family="Arial, sans-serif" text-anchor="middle">
+      <g transform="translate(35 95)"><rect width="115" height="118" rx="15" fill="#e8f5f6" stroke="#b7d8dc"/><text x="58" y="38" font-size="18" fill="#5b707a">MAR</text><text x="58" y="88" font-size="44" font-weight="800" fill="#0e2a3a">31</text></g>
+      <g transform="translate(175 95)"><rect width="115" height="118" rx="15" fill="#e8f5f6" stroke="#b7d8dc"/><text x="58" y="38" font-size="18" fill="#5b707a">JUN</text><text x="58" y="88" font-size="44" font-weight="800" fill="#0e2a3a">30</text></g>
+      <g transform="translate(315 95)"><rect width="115" height="118" rx="15" fill="#e8f5f6" stroke="#b7d8dc"/><text x="58" y="38" font-size="18" fill="#5b707a">SEP</text><text x="58" y="88" font-size="44" font-weight="800" fill="#0e2a3a">30</text></g>
+      <g transform="translate(455 95)"><rect width="115" height="118" rx="15" fill="#e8f5f6" stroke="#b7d8dc"/><text x="58" y="38" font-size="18" fill="#5b707a">DEC</text><text x="58" y="88" font-size="44" font-weight="800" fill="#0e2a3a">31</text></g>
+    </g>
+  </g>
+
+  <g transform="translate(805 430)" filter="url(#shadow)">
+    <rect x="0" y="0" width="680" height="365" rx="26" fill="#17303f" opacity=".96"/>
+    <rect x="32" y="30" width="616" height="305" rx="18" fill="url(#paper)"/>
+    <rect x="264" y="8" width="154" height="45" rx="15" fill="#d8a23d"/>
+    <text x="75" y="98" fill="#0e2a3a" font-family="Georgia, serif" font-size="47" font-weight="700">Annual Report Checklist</text>
+    <line x1="75" y1="120" x2="575" y2="120" stroke="#cbdadd" stroke-width="3"/>
+    <g font-family="Arial, sans-serif" font-size="25" fill="#294957">
+      <rect x="80" y="155" width="30" height="30" rx="5" fill="#147f86"/><path d="M87 170l8 8 16-20" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text x="132" y="180">Business information</text>
+      <rect x="80" y="205" width="30" height="30" rx="5" fill="#147f86"/><path d="M87 220l8 8 16-20" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text x="132" y="230">Current addresses</text>
+      <rect x="80" y="255" width="30" height="30" rx="5" fill="#147f86"/><path d="M87 270l8 8 16-20" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text x="132" y="280">Officers / managers</text>
+    </g>
+  </g>
+
+  <g fill="#0b6d76" opacity=".22">
+    <path d="M65 770c65-80 140-101 221-73-63 14-121 51-164 117z"/>
+    <path d="M100 800c78-40 151-34 218 18-74-15-143-6-205 26z"/>
+  </g>
+  <g transform="translate(1450 700)" fill="#d8a23d" opacity=".9"><circle cx="0" cy="0" r="42"/><circle cx="48" cy="12" r="42"/><circle cx="28" cy="55" r="42"/><circle cx="-24" cy="48" r="42"/><circle cx="-42" cy="5" r="42"/><circle cx="5" cy="25" r="17" fill="#8f5f13"/></g>
+</svg>
