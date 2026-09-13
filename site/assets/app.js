@@ -1,10 +1,18 @@
 (() => {
   const DCCA_SEARCH_URL = 'https://hbe.dcca.hawaii.gov/search-and-buy';
 
-  // Use the transparent production logo anywhere an older logo reference remains.
-  document.querySelectorAll('img[src="assets/logo.svg"], img[src^="assets/logo-correct.jpg"]').forEach((image) => {
-    image.src = 'assets/logo-transparent.png?v=20260913-1';
-  });
+  // Use the tightly cropped transparent logo in the header so it keeps its
+  // natural proportions. Keep the footer logo unchanged because its current
+  // appearance is already correct.
+  const headerLogo = document.querySelector('.brand img');
+  if (headerLogo) {
+    headerLogo.src = 'assets/logo-transparent-cropped.png?v=20260913-1';
+    headerLogo.style.setProperty('content', 'normal', 'important');
+    headerLogo.style.height = '58px';
+    headerLogo.style.width = 'auto';
+    headerLogo.style.maxWidth = '330px';
+    headerLogo.style.objectFit = 'contain';
+  }
 
   document.querySelectorAll('[data-dcca-search]').forEach((form) => {
     form.addEventListener('submit', (event) => {
