@@ -1,10 +1,10 @@
 (() => {
   const DCCA_SEARCH_URL = 'https://hbe.dcca.hawaii.gov/search-and-buy';
 
-  // Use the tightly cropped transparent logo in the header. CSS controls
-  // sizing so the logo always keeps its native aspect ratio.
+  // Interior pages use the tightly cropped transparent PNG. The homepage
+  // supplies its own approved transparent SVG (v4), so do not override it.
   const headerLogo = document.querySelector('.brand img');
-  if (headerLogo) {
+  if (headerLogo && !headerLogo.src.includes('hbe-logo-approved-v4.svg')) {
     headerLogo.src = 'assets/logo-transparent-cropped.png?v=20260913-2';
     headerLogo.removeAttribute('width');
     headerLogo.removeAttribute('height');
