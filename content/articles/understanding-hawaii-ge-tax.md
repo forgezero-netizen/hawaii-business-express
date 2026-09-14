@@ -18,7 +18,7 @@ published: 2026-09-13
 updated: 2026-09-13
 featured: false
 draft: false
-image: "/assets/articles/understanding-hawaii-ge-tax/hero.svg"
+image: "/assets/articles/understanding-hawaii-ge-tax/hero.png"
 image_alt: "Hawaiʻi General Excise Tax compliance illustration with Diamond Head, a GET checklist, laptop, calculator, and filing materials"
 author: "Hawaiʻi Business Express"
 ---
