@@ -66,3 +66,6 @@ jobs:
 
           bye
           LFTP
+
+      - name: Verify deployed article system
+        run: python scripts/verify_deployment.py
