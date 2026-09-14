@@ -1,0 +1,1 @@
+hero.png is intentionally managed as a manual server-side upload because the available GitHub connector truncated the binary during direct upload. The article and deployment verifier expect the live asset at /assets/articles/how-to-start-an-llc-in-hawaii/hero.png.
