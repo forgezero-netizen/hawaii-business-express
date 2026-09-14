@@ -8,7 +8,7 @@ import sys
 import time
 from pathlib import Path
 from urllib.error import HTTPError, URLError
-from urllib.parse import urljoin, urlparse, urlunparse, parse_qsl, urlencode
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 from urllib.request import Request, urlopen
 
 import yaml
@@ -51,14 +51,14 @@ def fetch(url: str, *, binary: bool = False) -> bytes | str:
     raise VerificationError(f"Unable to fetch {url}: {last_error}")
 
 
-def parse_frontmatter(path: Path) -> tuple[dict, str]:
+def parse_frontmatter(path: Path) -> dict:
     text = path.read_text(encoding="utf-8")
     if not text.startswith("---"):
         raise VerificationError(f"{path}: missing YAML front matter")
     parts = text.split("---", 2)
     if len(parts) != 3:
         raise VerificationError(f"{path}: malformed YAML front matter")
-    return yaml.safe_load(parts[1]) or {}, parts[2].lstrip()
+    return yaml.safe_load(parts[1]) or {}
 
 
 def normalize_image(value: object, slug: str) -> str:
@@ -81,7 +81,7 @@ def load_published_articles() -> list[dict]:
     for path in sorted(CONTENT_DIR.glob("*.md")):
         if path.name in {"ARTICLE-TEMPLATE.md", "README.md"}:
             continue
-        meta, _ = parse_frontmatter(path)
+        meta = parse_frontmatter(path)
         draft = meta.get("draft", True)
         if isinstance(draft, str):
             draft = draft.lower() == "true"
@@ -90,8 +90,6 @@ def load_published_articles() -> list[dict]:
         slug = str(meta.get("slug", "")).strip()
         if not slug:
             raise VerificationError(f"{path}: missing slug")
-        published = date_text(meta.get("published", ""))
-        updated = date_text(meta.get("updated", meta.get("published", "")))
         articles.append({
             "title": str(meta.get("title", "")).strip(),
             "slug": slug,
@@ -99,8 +97,8 @@ def load_published_articles() -> list[dict]:
             "category": str(meta.get("category", "")).strip(),
             "keywords": [str(k).strip() for k in (meta.get("keywords") or [])],
             "image": normalize_image(meta.get("image", ""), slug),
-            "published": published,
-            "updated": updated,
+            "published": date_text(meta.get("published", "")),
+            "updated": date_text(meta.get("updated", meta.get("published", ""))),
             "url": f"/articles/{slug}/",
         })
     return articles
@@ -115,9 +113,8 @@ def verify_svg_sidecars(image_url: str, svg_text: str) -> None:
     refs = []
     for match in re.finditer(r"(?:href|xlink:href)=[\"']([^\"']+)[\"']", svg_text):
         ref = match.group(1).strip()
-        if not ref or ref.startswith(("#", "data:")):
-            continue
-        refs.append(ref)
+        if ref and not ref.startswith(("#", "data:")):
+            refs.append(ref)
     for ref in sorted(set(refs)):
         sidecar_url = urljoin(image_url, ref)
         fetch(sidecar_url, binary=True)
@@ -187,6 +184,7 @@ def verify_article(article: dict, all_articles: list[dict], index: list[dict], s
     if len(matches) != 1:
         raise VerificationError(f"{slug}: expected exactly one article-index entry, found {len(matches)}")
     item = matches[0]
+
     for field in ("title", "category", "description", "image"):
         if item.get(field, "") != article[field]:
             raise VerificationError(f"{slug}: article-index field {field!r} does not match source metadata")
@@ -199,8 +197,8 @@ def verify_article(article: dict, all_articles: list[dict], index: list[dict], s
     if indexed_keywords != article["keywords"]:
         raise VerificationError(f"{slug}: article-index keywords do not match source metadata")
 
-    title_words = [w.lower() for w in re.findall(r"[A-Za-z0-9ʻ’'-]+", article["title"]) if len(w) >= 3]
-    title_query = " ".join(title_words[:2]) if len(title_words) >= 2 else (title_words[0] if title_words else "")
+    title_words = [w.lower() for w in re.findall(r"[A-Za-z0-9ʻ’'-]+", article["title"])]
+    title_query = " ".join(title_words[:3]) if title_words else ""
     searchable = " ".join([item.get("title", ""), item.get("description", ""), " ".join(indexed_keywords)]).lower()
     if title_query and title_query not in searchable:
         raise VerificationError(f"{slug}: meaningful title phrase is not discoverable in search metadata")
@@ -242,7 +240,6 @@ def main() -> int:
         raise VerificationError("Deployed article index must be a JSON array")
 
     sitemap = fetch(f"{BASE_URL}/sitemap.xml")
-
     for article in articles:
         verify_article(article, articles, index, sitemap)
 
