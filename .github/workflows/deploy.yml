@@ -69,3 +69,6 @@ jobs:
 
       - name: Verify deployed article system
         run: python scripts/verify_deployment.py
+
+      - name: Validate deployed hero image binaries
+        run: python scripts/verify_images.py
