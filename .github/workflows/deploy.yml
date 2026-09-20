@@ -40,6 +40,9 @@ jobs:
       - name: Restore and validate approved Articles banner
         run: python scripts/build_banner_asset.py
 
+      - name: Insert Infolinks tag into all built HTML pages
+        run: python scripts/inject_infolinks.py
+
       - name: Install lftp
         run: |
           sudo apt-get update
@@ -79,3 +82,6 @@ jobs:
 
       - name: Verify live Articles banner and image integrity
         run: python scripts/verify_articles_banner.py
+
+      - name: Verify Infolinks on live public pages
+        run: python scripts/verify_infolinks.py
