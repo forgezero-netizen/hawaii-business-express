@@ -13,6 +13,7 @@ TAG = (
     '  <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>\n'
 )
 CLOSING_BODY = re.compile(r"</body\s*>", re.IGNORECASE)
+GOOGLE_TOKEN = re.compile(r"google[a-zA-Z0-9]+\.html$")
 
 
 def main() -> None:
@@ -20,8 +21,14 @@ def main() -> None:
     if not pages:
         raise RuntimeError("No HTML pages found for Infolinks integration")
     changed = 0
+    skipped = 0
     for page in pages:
         html = page.read_text(encoding="utf-8")
+        # Search Console's verification token is a plain-text file with .html
+        # extension. It must retain its exact bytes and must not contain ads.
+        if page.parent == SITE and GOOGLE_TOKEN.fullmatch(page.name) and html.startswith("google-site-verification:"):
+            skipped += 1
+            continue
         if html.count("infolinks_pid") or html.count("infolinks_main.js"):
             # Fail closed on unexpected pre-existing ad tags instead of duplicating them.
             if html.count(TAG) != 1 or html.count("infolinks_pid") != 1 or html.count("infolinks_main.js") != 1:
@@ -36,7 +43,7 @@ def main() -> None:
         html = html[:pos] + TAG + html[pos:]
         page.write_text(html, encoding="utf-8")
         changed += 1
-    print(f"Infolinks publisher 3447991: {changed} HTML page(s) updated, {len(pages)} checked.")
+    print(f"Infolinks publisher 3447991: {changed} HTML page(s) updated; {len(pages) - skipped} checked; {skipped} verification token(s) left untouched.")
 
 
 if __name__ == "__main__":
