@@ -8,6 +8,7 @@ on:
       - "site/**"
       - "content/**"
       - "scripts/**"
+      - "asset_sources/**"
       - "requirements.txt"
       - ".github/workflows/deploy.yml"
   workflow_dispatch:
@@ -35,6 +36,9 @@ jobs:
 
       - name: Build and validate articles
         run: python scripts/build_articles.py
+
+      - name: Restore and validate approved Articles banner
+        run: python scripts/build_banner_asset.py
 
       - name: Install lftp
         run: |
@@ -72,3 +76,6 @@ jobs:
 
       - name: Validate deployed hero image binaries
         run: python scripts/verify_images.py
+
+      - name: Verify live Articles banner and image integrity
+        run: python scripts/verify_articles_banner.py
